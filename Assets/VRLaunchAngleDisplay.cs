@@ -24,7 +24,7 @@ public class VRLaunchAngleDisplay : MonoBehaviour
             float angle = Vector3.Angle(Vector3.up, controllerForward);
 
             // Convertir el ángulo a entero y mostrar en el texto UI
-            angleText.text = "Angle: " + Mathf.RoundToInt(angle) + "°";
+            angleText.text = "Angulo de lanzamiento: " + Mathf.RoundToInt(angle) + "°";
 
             // Asegurarse de que el texto esté activo cuando se agarra un objeto
             angleText.gameObject.SetActive(true);
