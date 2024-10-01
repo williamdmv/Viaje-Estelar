@@ -389,6 +389,7 @@
 "Assets/HandGrab.cs"
 "Assets/Scrips/ViveInput.cs"
 "Assets/SimpleAttach.cs"
+"Assets/VRLaunchAngleDisplay.cs"
 -langversion:9.0
 /deterministic
 /optimize+
