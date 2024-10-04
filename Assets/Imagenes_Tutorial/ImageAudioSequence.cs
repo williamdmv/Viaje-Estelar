@@ -15,6 +15,8 @@ public class ImageAudioSequence : MonoBehaviour
     public AudioSource audioSource;  // Referencia al AudioSource para reproducir el audio
     public ImageAudio[] sequence;    // Lista de imágenes y audios para la secuencia
     public float timeBetweenImages = 1f; // Tiempo entre imágenes (opcional)
+    public Canvas canvasToDisable;   // Referencia al Canvas que se desactivará al final
+    public Canvas canvasToEnable;    // Referencia al Canvas que se activará después
 
     private int currentIndex = 0;
 
@@ -44,5 +46,13 @@ public class ImageAudioSequence : MonoBehaviour
             // Pasar a la siguiente imagen en la secuencia
             currentIndex++;
         }
+
+        // Desactivar el Canvas al finalizar la secuencia
+        canvasToDisable.gameObject.SetActive(false);
+
+        // Activar el otro Canvas
+        canvasToEnable.gameObject.SetActive(true);
     }
 }
+
+
