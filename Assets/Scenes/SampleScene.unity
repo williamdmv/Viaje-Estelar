@@ -2110,7 +2110,7 @@ GameObject:
   - component: {fileID: 183754892}
   - component: {fileID: 183754894}
   m_Layer: 5
-  m_Name: Button (Legacy) (1)
+  m_Name: Button B
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2217,7 +2217,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 183754892}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1189151374}
+        m_TargetAssemblyTypeName: QuestionnaireManager, Assembly-CSharp
+        m_MethodName: SelectOption
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1001 &219169465
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3816,7 +3828,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &367894351
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5296,7 +5308,7 @@ GameObject:
   - component: {fileID: 524835576}
   - component: {fileID: 524835578}
   m_Layer: 5
-  m_Name: Button (Legacy) (2)
+  m_Name: Button C
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5403,7 +5415,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 524835576}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1189151374}
+        m_TargetAssemblyTypeName: QuestionnaireManager, Assembly-CSharp
+        m_MethodName: SelectOption
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 2
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1001 &537643412
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7061,6 +7085,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: dc7f8761380cd0149abe44b010940773, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1446016343}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: dc7f8761380cd0149abe44b010940773, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1446016345}
     - targetCorrespondingSourceObject: {fileID: 2426669532271018066, guid: dc7f8761380cd0149abe44b010940773, type: 3}
       insertIndex: -1
       addedObject: {fileID: 786299297}
@@ -7614,6 +7641,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: dc7f8761380cd0149abe44b010940773, type: 3}
       insertIndex: -1
       addedObject: {fileID: 850548903}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: dc7f8761380cd0149abe44b010940773, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 850548905}
     - targetCorrespondingSourceObject: {fileID: 2426669532271018066, guid: dc7f8761380cd0149abe44b010940773, type: 3}
       insertIndex: -1
       addedObject: {fileID: 850548902}
@@ -7751,6 +7781,21 @@ MonoBehaviour:
   highlightOnHover: 1
   hideHighlight: []
   hoverPriority: 0
+--- !u!114 &850548905
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 850548898}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e46fdc7130ac9143bf97401746ae999, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  optionIndex: 3
+  uiButton: {fileID: 1723457759}
+  questionnaireManager: {fileID: 1189151374}
 --- !u!1001 &885933901
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9711,6 +9756,13 @@ MonoBehaviour:
     - optionText: "C) La aceleraci\xF3n "
     - optionText: D) La velocidad terminal
     correctOptionIndex: 2
+  - questionText: Nueva pregunta
+    options:
+    - optionText: funciono
+    - optionText: Funciono
+    - optionText: funciono
+    - optionText: funciono
+    correctOptionIndex: 2
   questionTextUI: {fileID: 1090451372}
   optionButtons:
   - {fileID: 1242597761}
@@ -9972,7 +10024,7 @@ GameObject:
   - component: {fileID: 1242597762}
   - component: {fileID: 1242597761}
   m_Layer: 5
-  m_Name: Button (Legacy)
+  m_Name: Button A
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10041,7 +10093,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1242597762}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1189151374}
+        m_TargetAssemblyTypeName: QuestionnaireManager, Assembly-CSharp
+        m_MethodName: SelectOption
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1242597762
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11613,6 +11677,21 @@ MonoBehaviour:
   highlightOnHover: 1
   hideHighlight: []
   hoverPriority: 0
+--- !u!114 &1446016345
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1446016340}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e46fdc7130ac9143bf97401746ae999, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  optionIndex: 0
+  uiButton: {fileID: 1242597761}
+  questionnaireManager: {fileID: 1189151374}
 --- !u!1001 &1466297169
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12327,6 +12406,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: dc7f8761380cd0149abe44b010940773, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1564094489}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: dc7f8761380cd0149abe44b010940773, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1564094491}
     - targetCorrespondingSourceObject: {fileID: 2426669532271018066, guid: dc7f8761380cd0149abe44b010940773, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1564094488}
@@ -12464,6 +12546,21 @@ MonoBehaviour:
   highlightOnHover: 1
   hideHighlight: []
   hoverPriority: 0
+--- !u!114 &1564094491
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1564094484}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e46fdc7130ac9143bf97401746ae999, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  optionIndex: 1
+  uiButton: {fileID: 183754894}
+  questionnaireManager: {fileID: 1189151374}
 --- !u!1001 &1566649572
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13656,7 +13753,7 @@ GameObject:
   - component: {fileID: 1723457760}
   - component: {fileID: 1723457759}
   m_Layer: 5
-  m_Name: Button (Legacy) (3)
+  m_Name: Button D
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13705,7 +13802,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1723457760}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1189151374}
+        m_TargetAssemblyTypeName: QuestionnaireManager, Assembly-CSharp
+        m_MethodName: SelectOption
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 3
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1723457760
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14618,7 +14727,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1858768043
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21198,6 +21307,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: dc7f8761380cd0149abe44b010940773, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2056157003}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: dc7f8761380cd0149abe44b010940773, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2056157005}
     - targetCorrespondingSourceObject: {fileID: 2426669532271018066, guid: dc7f8761380cd0149abe44b010940773, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2056157002}
@@ -21335,6 +21447,21 @@ MonoBehaviour:
   highlightOnHover: 1
   hideHighlight: []
   hoverPriority: 0
+--- !u!114 &2056157005
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2056156998}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e46fdc7130ac9143bf97401746ae999, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  optionIndex: 2
+  uiButton: {fileID: 524835578}
+  questionnaireManager: {fileID: 1189151374}
 --- !u!1001 &2067790556
 PrefabInstance:
   m_ObjectHideFlags: 0
