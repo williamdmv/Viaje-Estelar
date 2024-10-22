@@ -36,7 +36,7 @@ public class VRLaunchAngleDisplay : MonoBehaviour
         }
 
         // Depuración para verificar la dirección del controlador y el ángulo
-        Debug.Log("Controller Forward Vector: " + controllerPose.transform.forward);
+        //Debug.Log("Controller Forward Vector: " + controllerPose.transform.forward);
     }
 }
 
