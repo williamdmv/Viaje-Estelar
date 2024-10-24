@@ -23,13 +23,19 @@ public class QuestionnaireManager : MonoBehaviour
     public Text questionTextUI; // El texto que mostrará la pregunta en la UI
     public List<Button> optionButtons; // Lista de botones que representan las opciones
     public float buttonDisableDuration = 1.5f; // Duración del bloqueo de los botones en segundos
+    public Text resultsText; // Texto en el mismo canvas donde se mostrarán los resultados
+    public Text finalMessageText; // Texto para el mensaje final que se mostrará después de los resultados
+    public string finalMessage = "Gracias por participar"; // Mensaje que aparecerá al final
 
     private int currentQuestionIndex = 0; // Índice de la pregunta actual
     private bool hasAnswered = false; // Bandera para controlar si ya se respondió la pregunta
+    private List<string> questionResults = new List<string>(); // Lista que almacena los resultados de cada pregunta
 
     void Start()
     {
-        DisplayQuestion();
+        resultsText.gameObject.SetActive(false); // Asegúrate de que el texto de resultados esté desactivado al inicio
+        finalMessageText.gameObject.SetActive(false); // Asegúrate de que el mensaje final esté desactivado al inicio
+        DisplayQuestion(); // Muestra la primera pregunta al inicio
     }
 
     // Método para mostrar la pregunta actual y sus opciones
@@ -50,13 +56,13 @@ public class QuestionnaireManager : MonoBehaviour
             for (int i = 0; i < optionButtons.Count; i++)
             {
                 optionButtons[i].onClick.RemoveAllListeners(); // Eliminamos los listeners previos
-                
+
                 if (i < currentQuestion.options.Count)
                 {
                     optionButtons[i].gameObject.SetActive(true); // Activa el botón si hay opción
 
-                    // Cambia el texto del botón para sistemas legacy
-                    Text legacyText = optionButtons[i].GetComponentInChildren<Text>(); // Asegúrate de que el componente Text legacy está en los hijos del botón
+                    // Cambia el texto del botón
+                    Text legacyText = optionButtons[i].GetComponentInChildren<Text>();
                     if (legacyText != null)
                     {
                         legacyText.text = currentQuestion.options[i].optionText;
@@ -77,7 +83,7 @@ public class QuestionnaireManager : MonoBehaviour
         }
         else
         {
-            Debug.Log("No hay más preguntas.");
+            ShowResults(); // Mostrar la pantalla de resultados al final del cuestionario
         }
     }
 
@@ -94,10 +100,12 @@ public class QuestionnaireManager : MonoBehaviour
             if (optionIndex == currentQuestion.correctOptionIndex)
             {
                 Debug.Log("¡Respuesta correcta!");
+                questionResults.Add("Pregunta " + (currentQuestionIndex + 1) + ": Correcta");
             }
             else
             {
                 Debug.Log("Respuesta incorrecta.");
+                questionResults.Add("Pregunta " + (currentQuestionIndex + 1) + ": Incorrecta");
             }
 
             // Deshabilitamos los botones después de la primera respuesta
@@ -135,5 +143,46 @@ public class QuestionnaireManager : MonoBehaviour
             button.interactable = true;
         }
     }
+
+    // Método para mostrar la pantalla de resultados
+    private void ShowResults()
+    {
+        // Desactivar los botones de opciones y el texto de la pregunta
+        questionTextUI.gameObject.SetActive(false);
+        foreach (var button in optionButtons)
+        {
+            button.gameObject.SetActive(false);
+        }
+
+        // Activar el texto de resultados
+        resultsText.gameObject.SetActive(true);
+
+        // Construimos el texto con los resultados de cada pregunta
+        string resultsSummary = "Resultados del Cuestionario:\n";
+        foreach (string result in questionResults)
+        {
+            resultsSummary += result + "\n";
+        }
+
+        resultsText.text = resultsSummary; // Mostramos los resultados en el Text UI del canvas
+
+        // Iniciar la corrutina para mostrar el mensaje final después de 7 segundos
+        StartCoroutine(ShowFinalMessage());
+    }
+
+    // Corrutina para mostrar el mensaje final después de 7 segundos
+    private IEnumerator ShowFinalMessage()
+    {
+        yield return new WaitForSeconds(7); // Esperamos 7 segundos
+
+        // Desactivar el texto de resultados
+        resultsText.gameObject.SetActive(false);
+
+        // Activar el texto del mensaje final, que se puede configurar desde el inspector
+        finalMessageText.gameObject.SetActive(true);
+        finalMessageText.text = finalMessage; // Mostrar el mensaje configurado desde el Inspector
+    }
 }
+
+
 
