@@ -5,7 +5,7 @@
       "app_key": "application.generated.unity.viaje_estelar.exe",
       "launch_type": "url",
       "url": "steam://launch/",
-      "action_manifest_path": "C:\\Users\\admin-medialab\\Viaje_Estelar\\Viaje-Estelar\\Assets\\StreamingAssets\\SteamVR\\actions.json",
+      "action_manifest_path": "C:\\Users\\admin-medialab\\Downloads\\Version_3\\Viaje-Estelar_v2\\Assets\\StreamingAssets\\SteamVR\\actions.json",
       "strings": {
         "en_us": {
           "name": "Viaje_Estelar [Testing]"
