@@ -12,7 +12,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{c756f8ee-2afe-095e-1bc2-b6dc8469c39e}</ProjectGuid>
+    <ProjectGuid>{6fc6e6ef-48ea-c342-44e7-8d4c7d289e33}</ProjectGuid>
     <ProjectTypeGuids>{E097FAD1-6243-4DAD-9C02-E9B9EFC3FFC1};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
@@ -47,6 +47,7 @@
   <ItemGroup>
     <Compile Include="Assets\VRObjectInfoDisplay.cs" />
     <Compile Include="Assets\VRObjectVelocityDisplay.cs" />
+    <Compile Include="Assets\GestorCuestionario.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextEventHandler.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexShakeA.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_ExampleScript_01.cs" />
@@ -70,6 +71,8 @@
     <Compile Include="Assets\HandCollision.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexJitter.cs" />
     <Compile Include="Assets\TeleportPlayer.cs" />
+    <Compile Include="Assets\Gravedarlunar.cs" />
+    <Compile Include="Assets\VrButtonSync2.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_DigitValidator.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_FrameRateCounter.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TextConsoleSimulator.cs" />
@@ -93,6 +96,7 @@
     <Compile Include="Assets\SimpleAttach.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\CameraController.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark03.cs" />
+    <Compile Include="Assets\Lunaquiz.cs" />
     <Compile Include="Assets\VRButtonSync.cs" />
     <Compile Include="Assets\QuestionAndAnswer.cs" />
     <Compile Include="Assets\ObjectProperties.cs" />
@@ -389,13 +393,13 @@
       <HintPath>C:\Program Files\Unity\Hub\Editor\2022.3.45f1\Editor\Data\Managed\UnityEngine\UnityEditor.UnityConnectModule.dll</HintPath>
     </Reference>
     <Reference Include="ReportGeneratorMerged">
-      <HintPath>C:\Users\admin-medialab\Downloads\Version_3\Viaje-Estelar_v2\Library\PackageCache\com.unity.testtools.codecoverage@1.2.6\lib\ReportGenerator\ReportGeneratorMerged.dll</HintPath>
+      <HintPath>C:\Users\admin-medialab\Desktop\Viaje-Estelar\Library\PackageCache\com.unity.testtools.codecoverage@1.2.6\lib\ReportGenerator\ReportGeneratorMerged.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VisualScripting.Antlr3.Runtime">
-      <HintPath>C:\Users\admin-medialab\Downloads\Version_3\Viaje-Estelar_v2\Library\PackageCache\com.unity.visualscripting@1.9.4\Runtime\VisualScripting.Flow\Dependencies\NCalc\Unity.VisualScripting.Antlr3.Runtime.dll</HintPath>
+      <HintPath>C:\Users\admin-medialab\Desktop\Viaje-Estelar\Library\PackageCache\com.unity.visualscripting@1.9.4\Runtime\VisualScripting.Flow\Dependencies\NCalc\Unity.VisualScripting.Antlr3.Runtime.dll</HintPath>
     </Reference>
     <Reference Include="Valve.Newtonsoft.Json">
-      <HintPath>C:\Users\admin-medialab\Downloads\Version_3\Viaje-Estelar_v2\Assets\SteamVR\Input\Plugins\JSON.NET\Valve.Newtonsoft.Json.dll</HintPath>
+      <HintPath>C:\Users\admin-medialab\Desktop\Viaje-Estelar\Assets\SteamVR\Input\Plugins\JSON.NET\Valve.Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="netstandard">
       <HintPath>C:\Program Files\Unity\Hub\Editor\2022.3.45f1\Editor\Data\NetStandard\ref\2.1.0\netstandard.dll</HintPath>
@@ -764,178 +768,178 @@
       <HintPath>C:\Program Files\Unity\Hub\Editor\2022.3.45f1\Editor\Data\NetStandard\compat\2.1.0\shims\netfx\System.Xml.Serialization.dll</HintPath>
     </Reference>
     <Reference Include="Unity.XR.OpenXR.Features.MetaQuestSupport.Editor">
-      <HintPath>C:\Users\admin-medialab\Downloads\Version_3\Viaje-Estelar_v2\Library\ScriptAssemblies\Unity.XR.OpenXR.Features.MetaQuestSupport.Editor.dll</HintPath>
+      <HintPath>C:\Users\admin-medialab\Desktop\Viaje-Estelar\Library\ScriptAssemblies\Unity.XR.OpenXR.Features.MetaQuestSupport.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.XR.Management">
-      <HintPath>C:\Users\admin-medialab\Downloads\Version_3\Viaje-Estelar_v2\Library\ScriptAssemblies\Unity.XR.Management.dll</HintPath>
+      <HintPath>C:\Users\admin-medialab\Desktop\Viaje-Estelar\Library\ScriptAssemblies\Unity.XR.Management.dll</HintPath>
     </Reference>
     <Reference Include="Unity.XR.Interaction.Toolkit.Editor">
-      <HintPath>C:\Users\admin-medialab\Downloads\Version_3\Viaje-Estelar_v2\Library\ScriptAssemblies\Unity.XR.Interaction.Toolkit.Editor.dll</HintPath>
+      <HintPath>C:\Users\admin-medialab\Desktop\Viaje-Estelar\Library\ScriptAssemblies\Unity.XR.Interaction.Toolkit.Editor.dll</HintPath>
     </Reference>
     <Reference Include="com.unity.cinemachine.editor">
-      <HintPath>C:\Users\admin-medialab\Downloads\Version_3\Viaje-Estelar_v2\Library\ScriptAssemblies\com.unity.cinemachine.editor.dll</HintPath>
+      <HintPath>C:\Users\admin-medialab\Desktop\Viaje-Estelar\Library\ScriptAssemblies\com.unity.cinemachine.editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Postprocessing.Runtime">
-      <HintPath>C:\Users\admin-medialab\Downloads\Version_3\Viaje-Estelar_v2\Library\ScriptAssemblies\Unity.Postprocessing.Runtime.dll</HintPath>
+      <HintPath>C:\Users\admin-medialab\Desktop\Viaje-Estelar\Library\ScriptAssemblies\Unity.Postprocessing.Runtime.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Rider.Editor">
-      <HintPath>C:\Users\admin-medialab\Downloads\Version_3\Viaje-Estelar_v2\Library\ScriptAssemblies\Unity.Rider.Editor.dll</HintPath>
+      <HintPath>C:\Users\admin-medialab\Desktop\Viaje-Estelar\Library\ScriptAssemblies\Unity.Rider.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.XR.OpenXR.Features.ConformanceAutomation">
-      <HintPath>C:\Users\admin-medialab\Downloads\Version_3\Viaje-Estelar_v2\Library\ScriptAssemblies\Unity.XR.OpenXR.Features.ConformanceAutomation.dll</HintPath>
+      <HintPath>C:\Users\admin-medialab\Desktop\Viaje-Estelar\Library\ScriptAssemblies\Unity.XR.OpenXR.Features.ConformanceAutomation.dll</HintPath>
     </Reference>
     <Reference Include="Unity.XR.OpenXR.Features.OculusQuestSupport.Editor">
-      <HintPath>C:\Users\admin-medialab\Downloads\Version_3\Viaje-Estelar_v2\Library\ScriptAssemblies\Unity.XR.OpenXR.Features.OculusQuestSupport.Editor.dll</HintPath>
+      <HintPath>C:\Users\admin-medialab\Desktop\Viaje-Estelar\Library\ScriptAssemblies\Unity.XR.OpenXR.Features.OculusQuestSupport.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VisualScripting.Flow">
-      <HintPath>C:\Users\admin-medialab\Downloads\Version_3\Viaje-Estelar_v2\Library\ScriptAssemblies\Unity.VisualScripting.Flow.dll</HintPath>
+      <HintPath>C:\Users\admin-medialab\Desktop\Viaje-Estelar\Library\ScriptAssemblies\Unity.VisualScripting.Flow.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Mathematics.Editor">
-      <HintPath>C:\Users\admin-medialab\Downloads\Version_3\Viaje-Estelar_v2\Library\ScriptAssemblies\Unity.Mathematics.Editor.dll</HintPath>
+      <HintPath>C:\Users\admin-medialab\Desktop\Viaje-Estelar\Library\ScriptAssemblies\Unity.Mathematics.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.XR.CoreUtils">
-      <HintPath>C:\Users\admin-medialab\Downloads\Version_3\Viaje-Estelar_v2\Library\ScriptAssemblies\Unity.XR.CoreUtils.dll</HintPath>
+      <HintPath>C:\Users\admin-medialab\Desktop\Viaje-Estelar\Library\ScriptAssemblies\Unity.XR.CoreUtils.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TestTools.CodeCoverage.Editor.OpenCover.Mono.Reflection">
-      <HintPath>C:\Users\admin-medialab\Downloads\Version_3\Viaje-Estelar_v2\Library\ScriptAssemblies\Unity.TestTools.CodeCoverage.Editor.OpenCover.Mono.Reflection.dll</HintPath>
+      <HintPath>C:\Users\admin-medialab\Desktop\Viaje-Estelar\Library\ScriptAssemblies\Unity.TestTools.CodeCoverage.Editor.OpenCover.Mono.Reflection.dll</HintPath>
     </Reference>
     <Reference Include="Unity.XR.OpenXR">
-      <HintPath>C:\Users\admin-medialab\Downloads\Version_3\Viaje-Estelar_v2\Library\ScriptAssemblies\Unity.XR.OpenXR.dll</HintPath>
+      <HintPath>C:\Users\admin-medialab\Desktop\Viaje-Estelar\Library\ScriptAssemblies\Unity.XR.OpenXR.dll</HintPath>
     </Reference>
     <Reference Include="Unity.XR.OpenXR.Features.MetaQuestSupport">
-      <HintPath>C:\Users\admin-medialab\Downloads\Version_3\Viaje-Estelar_v2\Library\ScriptAssemblies\Unity.XR.OpenXR.Features.MetaQuestSupport.dll</HintPath>
+      <HintPath>C:\Users\admin-medialab\Desktop\Viaje-Estelar\Library\ScriptAssemblies\Unity.XR.OpenXR.Features.MetaQuestSupport.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Performance.Profile-Analyzer.Editor">
-      <HintPath>C:\Users\admin-medialab\Downloads\Version_3\Viaje-Estelar_v2\Library\ScriptAssemblies\Unity.Performance.Profile-Analyzer.Editor.dll</HintPath>
+      <HintPath>C:\Users\admin-medialab\Desktop\Viaje-Estelar\Library\ScriptAssemblies\Unity.Performance.Profile-Analyzer.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TestTools.CodeCoverage.Editor">
-      <HintPath>C:\Users\admin-medialab\Downloads\Version_3\Viaje-Estelar_v2\Library\ScriptAssemblies\Unity.TestTools.CodeCoverage.Editor.dll</HintPath>
+      <HintPath>C:\Users\admin-medialab\Desktop\Viaje-Estelar\Library\ScriptAssemblies\Unity.TestTools.CodeCoverage.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.XR.Management.Editor">
-      <HintPath>C:\Users\admin-medialab\Downloads\Version_3\Viaje-Estelar_v2\Library\ScriptAssemblies\Unity.XR.Management.Editor.dll</HintPath>
+      <HintPath>C:\Users\admin-medialab\Desktop\Viaje-Estelar\Library\ScriptAssemblies\Unity.XR.Management.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.XR.OpenVR">
-      <HintPath>C:\Users\admin-medialab\Downloads\Version_3\Viaje-Estelar_v2\Library\ScriptAssemblies\Unity.XR.OpenVR.dll</HintPath>
+      <HintPath>C:\Users\admin-medialab\Desktop\Viaje-Estelar\Library\ScriptAssemblies\Unity.XR.OpenVR.dll</HintPath>
     </Reference>
     <Reference Include="Unity.XR.CoreUtils.Editor">
-      <HintPath>C:\Users\admin-medialab\Downloads\Version_3\Viaje-Estelar_v2\Library\ScriptAssemblies\Unity.XR.CoreUtils.Editor.dll</HintPath>
+      <HintPath>C:\Users\admin-medialab\Desktop\Viaje-Estelar\Library\ScriptAssemblies\Unity.XR.CoreUtils.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro">
-      <HintPath>C:\Users\admin-medialab\Downloads\Version_3\Viaje-Estelar_v2\Library\ScriptAssemblies\Unity.TextMeshPro.dll</HintPath>
+      <HintPath>C:\Users\admin-medialab\Desktop\Viaje-Estelar\Library\ScriptAssemblies\Unity.TextMeshPro.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VSCode.Editor">
-      <HintPath>C:\Users\admin-medialab\Downloads\Version_3\Viaje-Estelar_v2\Library\ScriptAssemblies\Unity.VSCode.Editor.dll</HintPath>
+      <HintPath>C:\Users\admin-medialab\Desktop\Viaje-Estelar\Library\ScriptAssemblies\Unity.VSCode.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.XR.OpenXR.Features.OculusQuestSupport">
-      <HintPath>C:\Users\admin-medialab\Downloads\Version_3\Viaje-Estelar_v2\Library\ScriptAssemblies\Unity.XR.OpenXR.Features.OculusQuestSupport.dll</HintPath>
+      <HintPath>C:\Users\admin-medialab\Desktop\Viaje-Estelar\Library\ScriptAssemblies\Unity.XR.OpenXR.Features.OculusQuestSupport.dll</HintPath>
     </Reference>
     <Reference Include="Unity.XR.Interaction.Toolkit">
-      <HintPath>C:\Users\admin-medialab\Downloads\Version_3\Viaje-Estelar_v2\Library\ScriptAssemblies\Unity.XR.Interaction.Toolkit.dll</HintPath>
+      <HintPath>C:\Users\admin-medialab\Desktop\Viaje-Estelar\Library\ScriptAssemblies\Unity.XR.Interaction.Toolkit.dll</HintPath>
     </Reference>
     <Reference Include="Unity.EditorCoroutines.Editor">
-      <HintPath>C:\Users\admin-medialab\Downloads\Version_3\Viaje-Estelar_v2\Library\ScriptAssemblies\Unity.EditorCoroutines.Editor.dll</HintPath>
+      <HintPath>C:\Users\admin-medialab\Desktop\Viaje-Estelar\Library\ScriptAssemblies\Unity.EditorCoroutines.Editor.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.XR.LegacyInputHelpers">
-      <HintPath>C:\Users\admin-medialab\Downloads\Version_3\Viaje-Estelar_v2\Library\ScriptAssemblies\UnityEngine.XR.LegacyInputHelpers.dll</HintPath>
+      <HintPath>C:\Users\admin-medialab\Desktop\Viaje-Estelar\Library\ScriptAssemblies\UnityEngine.XR.LegacyInputHelpers.dll</HintPath>
     </Reference>
     <Reference Include="Unity.PlasticSCM.Editor">
-      <HintPath>C:\Users\admin-medialab\Downloads\Version_3\Viaje-Estelar_v2\Library\ScriptAssemblies\Unity.PlasticSCM.Editor.dll</HintPath>
+      <HintPath>C:\Users\admin-medialab\Desktop\Viaje-Estelar\Library\ScriptAssemblies\Unity.PlasticSCM.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Timeline.Editor">
-      <HintPath>C:\Users\admin-medialab\Downloads\Version_3\Viaje-Estelar_v2\Library\ScriptAssemblies\Unity.Timeline.Editor.dll</HintPath>
+      <HintPath>C:\Users\admin-medialab\Desktop\Viaje-Estelar\Library\ScriptAssemblies\Unity.Timeline.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VisualScripting.Shared.Editor">
-      <HintPath>C:\Users\admin-medialab\Downloads\Version_3\Viaje-Estelar_v2\Library\ScriptAssemblies\Unity.VisualScripting.Shared.Editor.dll</HintPath>
+      <HintPath>C:\Users\admin-medialab\Desktop\Viaje-Estelar\Library\ScriptAssemblies\Unity.VisualScripting.Shared.Editor.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.SpatialTracking">
-      <HintPath>C:\Users\admin-medialab\Downloads\Version_3\Viaje-Estelar_v2\Library\ScriptAssemblies\UnityEditor.SpatialTracking.dll</HintPath>
+      <HintPath>C:\Users\admin-medialab\Desktop\Viaje-Estelar\Library\ScriptAssemblies\UnityEditor.SpatialTracking.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VisualStudio.Editor">
-      <HintPath>C:\Users\admin-medialab\Downloads\Version_3\Viaje-Estelar_v2\Library\ScriptAssemblies\Unity.VisualStudio.Editor.dll</HintPath>
+      <HintPath>C:\Users\admin-medialab\Desktop\Viaje-Estelar\Library\ScriptAssemblies\Unity.VisualStudio.Editor.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.UI">
-      <HintPath>C:\Users\admin-medialab\Downloads\Version_3\Viaje-Estelar_v2\Library\ScriptAssemblies\UnityEditor.UI.dll</HintPath>
+      <HintPath>C:\Users\admin-medialab\Desktop\Viaje-Estelar\Library\ScriptAssemblies\UnityEditor.UI.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VisualScripting.Core">
-      <HintPath>C:\Users\admin-medialab\Downloads\Version_3\Viaje-Estelar_v2\Library\ScriptAssemblies\Unity.VisualScripting.Core.dll</HintPath>
+      <HintPath>C:\Users\admin-medialab\Desktop\Viaje-Estelar\Library\ScriptAssemblies\Unity.VisualScripting.Core.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VisualScripting.Core.Editor">
-      <HintPath>C:\Users\admin-medialab\Downloads\Version_3\Viaje-Estelar_v2\Library\ScriptAssemblies\Unity.VisualScripting.Core.Editor.dll</HintPath>
+      <HintPath>C:\Users\admin-medialab\Desktop\Viaje-Estelar\Library\ScriptAssemblies\Unity.VisualScripting.Core.Editor.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.SpatialTracking">
-      <HintPath>C:\Users\admin-medialab\Downloads\Version_3\Viaje-Estelar_v2\Library\ScriptAssemblies\UnityEngine.SpatialTracking.dll</HintPath>
+      <HintPath>C:\Users\admin-medialab\Desktop\Viaje-Estelar\Library\ScriptAssemblies\UnityEngine.SpatialTracking.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UI">
-      <HintPath>C:\Users\admin-medialab\Downloads\Version_3\Viaje-Estelar_v2\Library\ScriptAssemblies\UnityEngine.UI.dll</HintPath>
+      <HintPath>C:\Users\admin-medialab\Desktop\Viaje-Estelar\Library\ScriptAssemblies\UnityEngine.UI.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.XR.LegacyInputHelpers">
-      <HintPath>C:\Users\admin-medialab\Downloads\Version_3\Viaje-Estelar_v2\Library\ScriptAssemblies\UnityEditor.XR.LegacyInputHelpers.dll</HintPath>
+      <HintPath>C:\Users\admin-medialab\Desktop\Viaje-Estelar\Library\ScriptAssemblies\UnityEditor.XR.LegacyInputHelpers.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VisualScripting.Flow.Editor">
-      <HintPath>C:\Users\admin-medialab\Downloads\Version_3\Viaje-Estelar_v2\Library\ScriptAssemblies\Unity.VisualScripting.Flow.Editor.dll</HintPath>
+      <HintPath>C:\Users\admin-medialab\Desktop\Viaje-Estelar\Library\ScriptAssemblies\Unity.VisualScripting.Flow.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Timeline">
-      <HintPath>C:\Users\admin-medialab\Downloads\Version_3\Viaje-Estelar_v2\Library\ScriptAssemblies\Unity.Timeline.dll</HintPath>
+      <HintPath>C:\Users\admin-medialab\Desktop\Viaje-Estelar\Library\ScriptAssemblies\Unity.Timeline.dll</HintPath>
     </Reference>
     <Reference Include="Unity.InputSystem">
-      <HintPath>C:\Users\admin-medialab\Downloads\Version_3\Viaje-Estelar_v2\Library\ScriptAssemblies\Unity.InputSystem.dll</HintPath>
+      <HintPath>C:\Users\admin-medialab\Desktop\Viaje-Estelar\Library\ScriptAssemblies\Unity.InputSystem.dll</HintPath>
     </Reference>
     <Reference Include="Unity.InputSystem.ForUI">
-      <HintPath>C:\Users\admin-medialab\Downloads\Version_3\Viaje-Estelar_v2\Library\ScriptAssemblies\Unity.InputSystem.ForUI.dll</HintPath>
+      <HintPath>C:\Users\admin-medialab\Desktop\Viaje-Estelar\Library\ScriptAssemblies\Unity.InputSystem.ForUI.dll</HintPath>
     </Reference>
     <Reference Include="Unity.XR.OpenVR.Editor">
-      <HintPath>C:\Users\admin-medialab\Downloads\Version_3\Viaje-Estelar_v2\Library\ScriptAssemblies\Unity.XR.OpenVR.Editor.dll</HintPath>
+      <HintPath>C:\Users\admin-medialab\Desktop\Viaje-Estelar\Library\ScriptAssemblies\Unity.XR.OpenVR.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VisualScripting.SettingsProvider.Editor">
-      <HintPath>C:\Users\admin-medialab\Downloads\Version_3\Viaje-Estelar_v2\Library\ScriptAssemblies\Unity.VisualScripting.SettingsProvider.Editor.dll</HintPath>
+      <HintPath>C:\Users\admin-medialab\Desktop\Viaje-Estelar\Library\ScriptAssemblies\Unity.VisualScripting.SettingsProvider.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.XR.OpenXR.Editor">
-      <HintPath>C:\Users\admin-medialab\Downloads\Version_3\Viaje-Estelar_v2\Library\ScriptAssemblies\Unity.XR.OpenXR.Editor.dll</HintPath>
+      <HintPath>C:\Users\admin-medialab\Desktop\Viaje-Estelar\Library\ScriptAssemblies\Unity.XR.OpenXR.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TestTools.CodeCoverage.Editor.OpenCover.Model">
-      <HintPath>C:\Users\admin-medialab\Downloads\Version_3\Viaje-Estelar_v2\Library\ScriptAssemblies\Unity.TestTools.CodeCoverage.Editor.OpenCover.Model.dll</HintPath>
+      <HintPath>C:\Users\admin-medialab\Desktop\Viaje-Estelar\Library\ScriptAssemblies\Unity.TestTools.CodeCoverage.Editor.OpenCover.Model.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Postprocessing.Editor">
-      <HintPath>C:\Users\admin-medialab\Downloads\Version_3\Viaje-Estelar_v2\Library\ScriptAssemblies\Unity.Postprocessing.Editor.dll</HintPath>
+      <HintPath>C:\Users\admin-medialab\Desktop\Viaje-Estelar\Library\ScriptAssemblies\Unity.Postprocessing.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VisualScripting.State.Editor">
-      <HintPath>C:\Users\admin-medialab\Downloads\Version_3\Viaje-Estelar_v2\Library\ScriptAssemblies\Unity.VisualScripting.State.Editor.dll</HintPath>
+      <HintPath>C:\Users\admin-medialab\Desktop\Viaje-Estelar\Library\ScriptAssemblies\Unity.VisualScripting.State.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Mathematics">
-      <HintPath>C:\Users\admin-medialab\Downloads\Version_3\Viaje-Estelar_v2\Library\ScriptAssemblies\Unity.Mathematics.dll</HintPath>
+      <HintPath>C:\Users\admin-medialab\Desktop\Viaje-Estelar\Library\ScriptAssemblies\Unity.Mathematics.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
-      <HintPath>C:\Users\admin-medialab\Downloads\Version_3\Viaje-Estelar_v2\Library\ScriptAssemblies\Unity.TextMeshPro.Editor.dll</HintPath>
+      <HintPath>C:\Users\admin-medialab\Desktop\Viaje-Estelar\Library\ScriptAssemblies\Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.XR.OpenXR.Features.RuntimeDebugger.Editor">
-      <HintPath>C:\Users\admin-medialab\Downloads\Version_3\Viaje-Estelar_v2\Library\ScriptAssemblies\Unity.XR.OpenXR.Features.RuntimeDebugger.Editor.dll</HintPath>
+      <HintPath>C:\Users\admin-medialab\Desktop\Viaje-Estelar\Library\ScriptAssemblies\Unity.XR.OpenXR.Features.RuntimeDebugger.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VisualScripting.State">
-      <HintPath>C:\Users\admin-medialab\Downloads\Version_3\Viaje-Estelar_v2\Library\ScriptAssemblies\Unity.VisualScripting.State.dll</HintPath>
+      <HintPath>C:\Users\admin-medialab\Desktop\Viaje-Estelar\Library\ScriptAssemblies\Unity.VisualScripting.State.dll</HintPath>
     </Reference>
     <Reference Include="Cinemachine">
-      <HintPath>C:\Users\admin-medialab\Downloads\Version_3\Viaje-Estelar_v2\Library\ScriptAssemblies\Cinemachine.dll</HintPath>
+      <HintPath>C:\Users\admin-medialab\Desktop\Viaje-Estelar\Library\ScriptAssemblies\Cinemachine.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="SteamVR.csproj">
-      <Project>{8d819c90-51af-1285-7870-e6dffb595ef1}</Project>
+      <Project>{bfe48a22-6b15-46a8-4a65-8d65c94d70ca}</Project>
       <Name>SteamVR</Name>
     </ProjectReference>
     <ProjectReference Include="SteamVR_Actions.csproj">
-      <Project>{c6559c76-c396-0107-b86d-8e6e77792459}</Project>
+      <Project>{92609bc5-d564-ab6f-f660-9e00d28d0a06}</Project>
       <Name>SteamVR_Actions</Name>
     </ProjectReference>
     <ProjectReference Include="SteamVR_Windows_EditorHelper.csproj">
-      <Project>{256b164d-625d-d218-f863-507a6b2bf9d3}</Project>
+      <Project>{0e8f1efe-8bfc-a060-aeab-98a201f09078}</Project>
       <Name>SteamVR_Windows_EditorHelper</Name>
     </ProjectReference>
     <ProjectReference Include="SteamVR_Input_Editor.csproj">
-      <Project>{0bc5ab3f-504f-5468-4f7a-33f7ae8bf428}</Project>
+      <Project>{8f1fa3f1-62d7-9a81-ccc3-3ddcbccf5207}</Project>
       <Name>SteamVR_Input_Editor</Name>
     </ProjectReference>
     <ProjectReference Include="SteamVR_Editor.csproj">
-      <Project>{c137e96f-2c37-16da-1b62-73dc1e63ec5a}</Project>
+      <Project>{c8584032-3677-ef3e-1fd6-3e56b2dbc477}</Project>
       <Name>SteamVR_Editor</Name>
     </ProjectReference>
   </ItemGroup>
