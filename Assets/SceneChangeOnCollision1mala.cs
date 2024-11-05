@@ -1,6 +1,5 @@
 using System.Collections;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using UnityEngine.Video;
 using Valve.VR.InteractionSystem;
 
@@ -8,7 +7,6 @@ public class SceneChangeOnCollision1mala : MonoBehaviour
 {
     public GameObject loadingScreen;  // El Canvas que contiene la pantalla de carga
     public VideoPlayer videoPlayer;   // El Video Player que reproduce el video
-    //public string sceneToLoad;        // El nombre de la escena que quieres cargar
 
     private bool isTriggered = false; // Bandera para prevenir múltiples activaciones
 
@@ -16,6 +14,9 @@ public class SceneChangeOnCollision1mala : MonoBehaviour
     {
         // Asegúrate de que el Canvas de la pantalla de carga está desactivado al inicio
         loadingScreen.SetActive(false);
+
+        // Asigna el método OnVideoEnd al evento loopPointReached del VideoPlayer
+        videoPlayer.loopPointReached += OnVideoEnd;
     }
 
     // Este evento se activa cuando la mano toca el botón
@@ -38,10 +39,15 @@ public class SceneChangeOnCollision1mala : MonoBehaviour
 
         // Esperar hasta que el video termine de reproducirse
         yield return new WaitForSeconds((float)videoPlayer.clip.length);
+    }
 
-        // Cargar la nueva escena
-        //SceneManager.LoadScene(sceneToLoad);
+    // Este método se llama automáticamente cuando el video termina de reproducirse
+    private void OnVideoEnd(VideoPlayer vp)
+    {
+        // Ocultar el Canvas de la pantalla de carga
+        loadingScreen.SetActive(false);
+
+        // Restablecer la bandera para permitir futuras activaciones
+        isTriggered = false;
     }
 }
-
-

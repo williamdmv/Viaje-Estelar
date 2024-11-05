@@ -403,6 +403,8 @@
 "Assets/QuestionAndAnswer.cs"
 "Assets/QuestionnaireManager.cs"
 "Assets/QuizManager.cs"
+"Assets/RetryButtonHandler.cs"
+"Assets/ReturnToPosition.cs"
 "Assets/SceneChangeOnCollision.cs"
 "Assets/SceneChangeOnCollision1mala.cs"
 "Assets/Scrips/ViveInput.cs"

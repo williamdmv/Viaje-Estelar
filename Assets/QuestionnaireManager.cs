@@ -168,6 +168,27 @@ public class QuestionnaireManager : MonoBehaviour
             objectToActivateOnFailure.SetActive(true);
         }
     }
+
+        public void RetryQuiz()
+    {
+        currentQuestionIndex = 0;
+        hasIncorrectAnswer = false;
+        questionResults.Clear();
+        resultsText.gameObject.SetActive(false);
+        finalMessageText.gameObject.SetActive(false);
+        objectToActivate.SetActive(false);
+        objectToActivateOnFailure.SetActive(false);
+        questionTextUI.gameObject.SetActive(true);
+
+    foreach (var button in optionButtons)
+    {
+        button.gameObject.SetActive(true);
+    }
+
+    DisplayQuestion(); // Muestra la primera pregunta nuevamente
+}
+
+
 }
 
 

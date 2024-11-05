@@ -23,11 +23,11 @@ public class GestorCuestionario : MonoBehaviour
     public Text textoPreguntaUI; // El texto que mostrará la pregunta en la UI
     public List<Button> botonesOpciones; // Lista de botones que representan las opciones
     public float duracionDeshabilitarBotones = 1.5f; // Duración del bloqueo de los botones en segundos
-    // public Text textoResultados; // Texto en el mismo canvas donde se mostrarán los resultados
-    // public Text textoMensajeFinal; // Texto para el mensaje final que se mostrará después de los resultados
-    // public string mensajeFinal = "Gracias por participar"; // Mensaje que aparecerá al final
-    // public GameObject objetoActivarExito; // Objeto que se activará si todas las respuestas son correctas
-    // public GameObject objetoActivarFallo; // Objeto que se activará si al menos una respuesta es incorrecta
+    public Text textoResultados; // Texto en el mismo canvas donde se mostrarán los resultados
+    public Text textoMensajeFinal; // Texto para el mensaje final que se mostrará después de los resultados
+    public string mensajeFinal = "Gracias por participar"; // Mensaje que aparecerá al final
+    public GameObject objetoActivarExito; // Objeto que se activará si todas las respuestas son correctas
+    public GameObject objetoActivarFallo; // Objeto que se activará si al menos una respuesta es incorrecta
 
     private int indicePreguntaActual = 0; // Índice de la pregunta actual
     private bool respuestaDada = false; // Bandera para controlar si ya se respondió la pregunta
@@ -36,10 +36,10 @@ public class GestorCuestionario : MonoBehaviour
 
     void Start()
     {
-        // textoResultados.gameObject.SetActive(false); // Asegúrate de que el texto de resultados esté desactivado al inicio
-        // textoMensajeFinal.gameObject.SetActive(false); // Asegúrate de que el mensaje final esté desactivado al inicio
-        // objetoActivarExito.SetActive(false); // Asegúrate de que el objeto esté desactivado al inicio
-        // objetoActivarFallo.SetActive(false); // Asegúrate de que el objeto de fallo esté desactivado al inicio
+        textoResultados.gameObject.SetActive(false); // Asegúrate de que el texto de resultados esté desactivado al inicio
+        textoMensajeFinal.gameObject.SetActive(false); // Asegúrate de que el mensaje final esté desactivado al inicio
+        objetoActivarExito.SetActive(false); // Asegúrate de que el objeto esté desactivado al inicio
+        objetoActivarFallo.SetActive(false); // Asegúrate de que el objeto de fallo esté desactivado al inicio
         MostrarPregunta(); // Muestra la primera pregunta al inicio
     }
 
@@ -137,36 +137,36 @@ public class GestorCuestionario : MonoBehaviour
             boton.gameObject.SetActive(false);
         }
 
-        // textoResultados.gameObject.SetActive(true);
+        textoResultados.gameObject.SetActive(true);
         string resumenResultados = "Resultados del Cuestionario:\n";
         foreach (string resultado in resultadosPreguntas)
         {
             resumenResultados += resultado + "\n";
         }
 
-        // textoResultados.text = resumenResultados;
+        textoResultados.text = resumenResultados;
 
-        // StartCoroutine(MostrarMensajeFinal());
+        StartCoroutine(MostrarMensajeFinal());
     }
 
-    // private IEnumerator MostrarMensajeFinal()
-    // {
-    //     yield return new WaitForSeconds(7);
+     private IEnumerator MostrarMensajeFinal()
+    {
+        yield return new WaitForSeconds(7);
 
-    //     textoResultados.gameObject.SetActive(false);
-    //     textoMensajeFinal.gameObject.SetActive(true);
-    //     textoMensajeFinal.text = mensajeFinal;
+         textoResultados.gameObject.SetActive(false);
+         textoMensajeFinal.gameObject.SetActive(true);
+         textoMensajeFinal.text = mensajeFinal;
 
-    //     // Si no hubo ninguna respuesta incorrecta, activamos el primer objeto
-    //     // if (!respuestaIncorrecta)
-    //     // {
-    //     //     objetoActivarExito.SetActive(true);
-    //     // }
-    //     // else
-    //     // {
-    //     //     // Si hubo al menos una respuesta incorrecta, activamos el segundo objeto
-    //     //     objetoActivarFallo.SetActive(true);
-    //     // }
-    // }
+         //Si no hubo ninguna respuesta incorrecta, activamos el primer objeto
+         if (!respuestaIncorrecta)
+        {
+              objetoActivarExito.SetActive(true);
+          }
+            else
+                {
+    //Si hubo al menos una respuesta incorrecta, activamos el segundo objeto
+        objetoActivarFallo.SetActive(true);
+        }
+    }
 }
 
