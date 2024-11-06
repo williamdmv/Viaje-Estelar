@@ -1919,15 +1919,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 447954, guid: dc06161b6d97feb419f45f03b62e14b9, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 22.001
+      value: 22.084
       objectReference: {fileID: 0}
     - target: {fileID: 447954, guid: dc06161b6d97feb419f45f03b62e14b9, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.397
+      value: 2.291
       objectReference: {fileID: 0}
     - target: {fileID: 447954, guid: dc06161b6d97feb419f45f03b62e14b9, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 4.754
+      value: 4.77
       objectReference: {fileID: 0}
     - target: {fileID: 447954, guid: dc06161b6d97feb419f45f03b62e14b9, type: 3}
       propertyPath: m_LocalRotation.w
@@ -2190,7 +2190,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 226.9}
-  m_SizeDelta: {x: 600, y: 100}
+  m_SizeDelta: {x: 900, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &701645541
 MonoBehaviour:
@@ -2214,7 +2214,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 40
+    m_FontSize: 30
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
@@ -9856,7 +9856,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   loadingScreen: {fileID: 2008137088}
   videoPlayer: {fileID: 1683811708}
-  sceneToLoad: Luna
+  sceneToLoad: Marte
 --- !u!65 &1351828208
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -12137,19 +12137,36 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   listaPreguntas:
-  - textoPregunta: preguna 1
+  - textoPregunta: "\xBFQu\xE9 tipo de trayectoria sigue un objeto lanzado hacia
+      la Luna en ausencia de atm\xF3sfera?"
     opciones:
-    - textoOpcion: opcion_correcta
-    - textoOpcion: opcion_2
-    - textoOpcion: opcion_3
-    - textoOpcion: opcion_4
-    indiceOpcionCorrecta: 0
-  - textoPregunta: preguna 2
+    - textoOpcion: "a) Rectil\xEDnea"
+    - textoOpcion: b) Circular
+    - textoOpcion: "c) Parab\xF3lica"
+    - textoOpcion: "d) El\xEDptica"
+    indiceOpcionCorrecta: 2
+  - textoPregunta: "\xBFQu\xE9 tipo de movimiento realiza la Luna alrededor de la
+      Tierra?"
     opciones:
-    - textoOpcion: opcion a
-    - textoOpcion: opcion_correcta b
-    - textoOpcion: opcion_c
-    - textoOpcion: opcion_d
+    - textoOpcion: "a) Parab\xF3lico"
+    - textoOpcion: "b) Rectil\xEDneo"
+    - textoOpcion: c) Circular uniforme
+    - textoOpcion: d) Casi circular por la gravedad
+    indiceOpcionCorrecta: 3
+  - textoPregunta: 'Para que una nave orbite la Luna, su movimiento debe ser:'
+    opciones:
+    - textoOpcion: "a) Rectil\xEDneo y acelerado"
+    - textoOpcion: "b) Parab\xF3lico y constante"
+    - textoOpcion: c) Circular uniforme
+    - textoOpcion: "d) Circular con aceleraci\xF3n centr\xEDpeta"
+    indiceOpcionCorrecta: 3
+  - textoPregunta: "\xBFPor qu\xE9 una nave en \xF3rbita baja de la Tierra sigue
+      en movimiento circular?"
+    opciones:
+    - textoOpcion: a) Velocidad constante
+    - textoOpcion: "b) Aceleraci\xF3n centr\xEDpeta por gravedad"
+    - textoOpcion: "c) Resistencia atmosf\xE9rica"
+    - textoOpcion: "d) Atracci\xF3n de la Luna"
     indiceOpcionCorrecta: 1
   textoPreguntaUI: {fileID: 701645541}
   botonesOpciones:

@@ -33,6 +33,7 @@ public class QuestionnaireManager : MonoBehaviour
     private bool hasAnswered = false; // Bandera para controlar si ya se respondió la pregunta
     private bool hasIncorrectAnswer = false; // Bandera para verificar si se ha respondido alguna pregunta incorrectamente
     private List<string> questionResults = new List<string>(); // Lista que almacena los resultados de cada pregunta
+    
 
     void Start()
     {
@@ -187,6 +188,23 @@ public class QuestionnaireManager : MonoBehaviour
 
     DisplayQuestion(); // Muestra la primera pregunta nuevamente
 }
+
+// Se Agrega este método en el script para el sistema de monedas (no afecta al resto del codigo, sino al sistema de monedas)
+public int GetCorrectAnswerCount()
+{
+    int correctCount = 0;
+
+    foreach (string result in questionResults)
+    {
+        if (result.Contains("Correcta"))
+        {
+            correctCount++;
+        }
+    }
+
+    return correctCount;
+}
+
 
 
 }
