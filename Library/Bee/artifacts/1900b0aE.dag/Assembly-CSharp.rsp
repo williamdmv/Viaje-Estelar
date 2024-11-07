@@ -404,6 +404,7 @@
 "Assets/QuestionAndAnswer.cs"
 "Assets/QuestionnaireManager.cs"
 "Assets/QuizManager.cs"
+"Assets/REintentar Button.cs"
 "Assets/RetryButtonHandler.cs"
 "Assets/ReturnToPosition.cs"
 "Assets/SceneChangeOnCollision.cs"

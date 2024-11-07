@@ -168,5 +168,41 @@ public class GestorCuestionario : MonoBehaviour
         objetoActivarFallo.SetActive(true);
         }
     }
+
+    public void RetryQuiz()
+{
+    indicePreguntaActual = 0;
+    respuestaIncorrecta = false;
+    resultadosPreguntas.Clear();
+    textoResultados.gameObject.SetActive(false);
+    textoMensajeFinal.gameObject.SetActive(false);
+    objetoActivarExito.SetActive(false);
+    objetoActivarFallo.SetActive(false);
+    textoPreguntaUI.gameObject.SetActive(true);
+
+    foreach (var boton in botonesOpciones)
+    {
+        boton.gameObject.SetActive(true);
+    }
+
+    MostrarPregunta(); 
+}
+
+public int GetCorrectAnswerCount()
+{
+    int correctCount = 0;
+
+    foreach (string resultado in resultadosPreguntas)
+    {
+        if (resultado.Contains("Correcta"))
+        {
+            correctCount++;
+        }
+    }
+
+    return correctCount;
+}
+
+
 }
 
