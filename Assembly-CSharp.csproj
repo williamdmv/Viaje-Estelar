@@ -69,6 +69,7 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\ObjectSpin.cs" />
     <Compile Include="Assets\SceneChangeOnCollision1mala.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_PhoneNumberValidator.cs" />
+    <Compile Include="Assets\CurrencyManagerForGestor.cs" />
     <Compile Include="Assets\HandCollision.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexJitter.cs" />
     <Compile Include="Assets\Gravedarlunar.cs" />
@@ -120,6 +121,7 @@
     <None Include="Assets\StreamingAssets\SteamVR\bindings_oculus_touch.json" />
     <None Include="Assets\StreamingAssets\SteamVR\binding_vive_cosmos.json" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface-Mobile.shader" />
+    <None Include="Assets\Monedas\coins.json" />
     <None Include="Assets\StreamingAssets\SteamVR\binding_vive_pro.json" />
     <None Include="Assets\StreamingAssets\SteamVR\bindings_holographic_controller.json" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface.shader" />

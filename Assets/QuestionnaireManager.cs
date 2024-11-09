@@ -33,7 +33,8 @@ public class QuestionnaireManager : MonoBehaviour
     private bool hasAnswered = false; // Bandera para controlar si ya se respondió la pregunta
     private bool hasIncorrectAnswer = false; // Bandera para verificar si se ha respondido alguna pregunta incorrectamente
     private List<string> questionResults = new List<string>(); // Lista que almacena los resultados de cada pregunta
-    
+    public CurrencyManager currencyManager; // Referencia a CurrencyManager
+
 
     void Start()
     {
@@ -180,10 +181,17 @@ public class QuestionnaireManager : MonoBehaviour
         objectToActivate.SetActive(false);
         objectToActivateOnFailure.SetActive(false);
         questionTextUI.gameObject.SetActive(true);
+        
 
     foreach (var button in optionButtons)
     {
         button.gameObject.SetActive(true);
+    }
+
+     // Llama al método para reiniciar la lógica de monedas en CurrencyManager
+    if (currencyManager != null)
+    {
+        currencyManager.ResetFinalMessage();
     }
 
     DisplayQuestion(); // Muestra la primera pregunta nuevamente

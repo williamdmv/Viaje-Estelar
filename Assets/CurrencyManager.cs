@@ -1,4 +1,5 @@
 using System.Collections;
+using System.IO;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -10,9 +11,17 @@ public class CurrencyManager : MonoBehaviour
     private int coins = 0; // Contador de monedas
     private bool finalMessageShown = false; // Para asegurar que solo se ejecute una vez
 
+    private string filePath;
+
     void Start()
     {
         coinCanvas.SetActive(false); // Desactiva el canvas de monedas al inicio
+
+        // Define la ruta del archivo JSON en Assets/Monedas
+        filePath = Application.dataPath + "/Monedas/coins.json";
+
+        // Cargar las monedas del archivo JSON si existe
+        LoadCoins();
     }
 
     void Update()
@@ -31,8 +40,11 @@ public class CurrencyManager : MonoBehaviour
         int correctAnswers = questionnaireManager.GetCorrectAnswerCount();
 
         // Calcula las monedas (2 monedas por respuesta correcta)
-        coins += correctAnswers * 2;
+        coins = correctAnswers * 2;
         coinText.text = "Monedas: " + coins;
+
+        // Guardar las monedas en el archivo JSON
+        SaveCoins();
 
         // Activa el canvas de monedas y lo desactiva después de 5 segundos
         StartCoroutine(ShowCoinCanvas());
@@ -44,4 +56,43 @@ public class CurrencyManager : MonoBehaviour
         yield return new WaitForSeconds(5);
         coinCanvas.SetActive(false);
     }
+
+    // Método para reiniciar la visualización de monedas cuando se reinicia el quiz
+    public void ResetFinalMessage()
+    {
+        finalMessageShown = false; // Permite que se muestren las monedas después de un reinicio
+    }
+
+    // Método para guardar las monedas en un archivo JSON
+    private void SaveCoins()
+    {
+        // Crea la carpeta si no existe
+        if (!Directory.Exists(Path.GetDirectoryName(filePath)))
+        {
+            Directory.CreateDirectory(Path.GetDirectoryName(filePath));
+        }
+
+        // Guarda las monedas en formato JSON
+        File.WriteAllText(filePath, JsonUtility.ToJson(new CoinData { coins = this.coins }));
+    }
+
+    // Método para cargar las monedas desde el archivo JSON
+    private void LoadCoins()
+    {
+        if (File.Exists(filePath))
+        {
+            string json = File.ReadAllText(filePath);
+            CoinData data = JsonUtility.FromJson<CoinData>(json);
+            this.coins = data.coins;
+            coinText.text = "Monedas: " + coins;
+        }
+    }
+
+    // Clase auxiliar para guardar los datos en formato JSON
+    [System.Serializable]
+    private class CoinData
+    {
+        public int coins;
+    }
 }
+

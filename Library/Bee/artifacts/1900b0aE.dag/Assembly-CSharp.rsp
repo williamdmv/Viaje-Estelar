@@ -392,6 +392,7 @@
 -analyzer:"C:/Program Files/Unity/Hub/Editor/2022.3.45f1/Editor/Data/Tools/Unity.SourceGenerators/Unity.SourceGenerators.dll"
 "Assets/AnswerScript.cs"
 "Assets/CurrencyManager.cs"
+"Assets/CurrencyManagerForGestor.cs"
 "Assets/DragAndDropVR.cs"
 "Assets/GestorCuestionario.cs"
 "Assets/Gravedarlunar.cs"

@@ -33,6 +33,8 @@ public class GestorCuestionario : MonoBehaviour
     private bool respuestaDada = false; // Bandera para controlar si ya se respondió la pregunta
     private bool respuestaIncorrecta = false; // Bandera para verificar si se ha respondido alguna pregunta incorrectamente
     private List<string> resultadosPreguntas = new List<string>(); // Lista que almacena los resultados de cada pregunta
+   public CurrencyManagerForGestor currencyManagerforgestor; // Referencia a CurrencyManagerForGestor
+
 
     void Start()
     {
@@ -153,20 +155,38 @@ public class GestorCuestionario : MonoBehaviour
     {
         yield return new WaitForSeconds(7);
 
-         textoResultados.gameObject.SetActive(false);
-         textoMensajeFinal.gameObject.SetActive(true);
-         textoMensajeFinal.text = mensajeFinal;
+    textoResultados.gameObject.SetActive(false);
+    textoMensajeFinal.gameObject.SetActive(true);
 
-         //Si no hubo ninguna respuesta incorrecta, activamos el primer objeto
-         if (!respuestaIncorrecta)
-        {
-              objetoActivarExito.SetActive(true);
-          }
-            else
-                {
-    //Si hubo al menos una respuesta incorrecta, activamos el segundo objeto
+    // Mostrar mensaje final si no está vacío
+    if (!string.IsNullOrEmpty(mensajeFinal))
+    {
+        textoMensajeFinal.text = mensajeFinal;
+    }
+    else
+    {
+        textoMensajeFinal.text = ""; // Si está vacío, dejar sin texto
+    }
+
+    // Mostrar monedas
+    if (currencyManagerforgestor != null)
+    {
+        currencyManagerforgestor.AwardCoins();
+    }
+
+    // Activar objeto de éxito o fallo
+    if (!respuestaIncorrecta)
+    {
+        objetoActivarExito.SetActive(true);
+    }
+    else
+    {
         objetoActivarFallo.SetActive(true);
-        }
+    }
+
+    // Esperar 7 segundos y mostrar el siguiente mensaje
+    yield return new WaitForSeconds(10);
+    textoMensajeFinal.text = "¡Fin del cuestionario, astronauta. Haz llegado al final de la aventura!"; // Cambia al segundo mensaje
     }
 
     public void RetryQuiz()
@@ -183,6 +203,11 @@ public class GestorCuestionario : MonoBehaviour
     foreach (var boton in botonesOpciones)
     {
         boton.gameObject.SetActive(true);
+    }
+
+     if (currencyManagerforgestor != null)
+    {
+        currencyManagerforgestor.ResetFinalMessage();
     }
 
     MostrarPregunta(); 
@@ -205,4 +230,3 @@ public int GetCorrectAnswerCount()
 
 
 }
-

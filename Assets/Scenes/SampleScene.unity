@@ -6195,15 +6195,15 @@ MonoBehaviour:
   sequence:
   - image: {fileID: 21300000, guid: 9d1e81d2d391c44409d80fe9c1992e86, type: 3}
     audioClip: {fileID: 8300000, guid: e37200b074ddc2240b66cb0714577eb3, type: 3}
-  - image: {fileID: 21300000, guid: 42007979f0aa731448c0c68daee631ab, type: 3}
-    audioClip: {fileID: 8300000, guid: 9c8683e5afaeb6045bd2161ddd0fbd41, type: 3}
   - image: {fileID: 21300000, guid: 0df892b808a12574da295fdc2503ab0a, type: 3}
+    audioClip: {fileID: 8300000, guid: 9c8683e5afaeb6045bd2161ddd0fbd41, type: 3}
+  - image: {fileID: 21300000, guid: 42007979f0aa731448c0c68daee631ab, type: 3}
     audioClip: {fileID: 8300000, guid: 7ef2fdd5f45f38646bf997d4708d01b5, type: 3}
+  - image: {fileID: 21300000, guid: 11118789fa256294b9281cf16f6f1dcc, type: 3}
+    audioClip: {fileID: 8300000, guid: 7d2a05a004dca414ba774d3b98d0d7c1, type: 3}
   - image: {fileID: 21300000, guid: 6f02f33c1bf5b674687f182ca2b0d60c, type: 3}
     audioClip: {fileID: 8300000, guid: 2529d62905315d84cb23060a80fe4721, type: 3}
   - image: {fileID: 21300000, guid: 7ef51af4ec84e24439732c28cb5800d8, type: 3}
-    audioClip: {fileID: 8300000, guid: b0c4bcb98d8801f4685e01667304e2be, type: 3}
-  - image: {fileID: 21300000, guid: 11118789fa256294b9281cf16f6f1dcc, type: 3}
     audioClip: {fileID: 8300000, guid: b0c4bcb98d8801f4685e01667304e2be, type: 3}
   timeBetweenImages: 1
   canvasToDisable: {fileID: 1858768045}
@@ -12135,6 +12135,7 @@ MonoBehaviour:
     y la segunda ley de Newton."
   objectToActivate: {fileID: 101908371}
   objectToActivateOnFailure: {fileID: 1160551774}
+  currencyManager: {fileID: 339662273}
 --- !u!4 &1189151375
 Transform:
   m_ObjectHideFlags: 0
@@ -18811,7 +18812,7 @@ RectTransform:
   m_GameObject: {fileID: 1958482558}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.0007, y: 0.19414, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 941555534}
